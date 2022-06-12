@@ -34,7 +34,7 @@ make run-test
 Getting docker host from containers are tricky
 Check this [thread at stack overflow](https://stackoverflow.com/questions/24319662/from-inside-of-a-docker-container-how-do-i-connect-to-the-localhost-of-the-mach)
 
-Make sure you start docker container with following options so that reaper will work
+Make sure you start docker container with following options so that reaper will work, while running testcontainer inside docker
 ```
 docker run --rm -it \
     -v /var/run/docker.sock:/var/run/docker.sock \
@@ -42,3 +42,4 @@ docker run --rm -it \
     --add-host host.docker.internal:host-gateway \
      $(service_name)-tests
 ```
+As specifield in the `testcontainer-go` [issue](https://github.com/testcontainers/testcontainers-go/issues/430)
